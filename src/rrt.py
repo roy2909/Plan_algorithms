@@ -62,7 +62,7 @@ class RRT:
         y_delta = point3[1] - point2[1]
         return ((point1[0] - point2[0]) * x_delta + (point1[1] - point2[1]) * y_delta) / (x_delta * x_delta + y_delta * y_delta)
 
-    def check_collision_free_path(self):
+    def free_path(self):
         for circle in self.circles:
             if self.path_circle_collision(circle, self.q_new, self.q_goal):
                 return False
@@ -100,7 +100,7 @@ class RRT:
                 y1 = [self.q_near[1], self.q_new[1]]
                 ax.plot(x1, y1, color='blue')
                 plt.pause(0.0001)
-                if self.check_collision_free_path():
+                if self.free_path():
                     x2 = [self.q_new[0], self.q_goal[0]]
                     y2 = [self.q_new[1], self.q_goal[1]]
                     ax.plot(x2, y2, color='blue')
