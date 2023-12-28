@@ -65,7 +65,7 @@ def visualize_roadmap_with_path(graph, obstacles, path):
     plt.title('Probability Road Map with Obstacles')
 
     pos = nx.get_node_attributes(graph, 'pos')
-    nx.draw(graph, pos, with_labels=True, node_color='blue')
+    nx.draw(graph, pos, with_labels=True, node_color='yellow')
 
     for obstacle in obstacles:
         center, radius = obstacle
