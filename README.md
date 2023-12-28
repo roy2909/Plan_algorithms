@@ -65,3 +65,24 @@ RRT Algorithm
 `RANDOM_CONFIGURATION` : Generates a random position in the domain.                                                              
 `NEAREST_VERTEX`  : finds the vertex in G that is closest to the given position, according to some metric (a measure of distance). We will use the Euclidean metric.                                                                            
 `NEW_CONFIGURATION` : generates a new configuration in the tree by moving some distance Δ from one vertex configuration towards another configuration.
+
+#### Modification for RRT with obstacles
+
+##### Collision Checking Steps
+
+* Before Adding qnew to the Tree:
+Check if the path from qnear to qnew intersects with any obstacles.
+Collision occurs if the line between these vertices intersects any obstacle circles.
+
+* After Adding a New Vertex:
+Check for a collision-free path from the new vertex to the goal.
+If a collision-free path exists, terminate the algorithm.
+
+##### Path Finding Steps:
+
+* Finding a Path to the Goal:
+Once a vertex in the tree connects to the goal state, a collision-free path from that vertex to the goal is sought.
+
+
+* Backtracking for Path Reconstruction:
+When a path from a tree node to the goal state is found, traverse backward from the goal state through the connected nodes to reconstruct the complete path from the starting location.
