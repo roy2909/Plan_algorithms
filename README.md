@@ -1,5 +1,7 @@
 ## Probabilistic Roadmaps (PRM)
 
+Clone into directory and Run using `python3 prm.py`
+
 A probabilistic roadmap (PRM) is a network graph of possible paths in a given map based on free and occupied spaces.
 
 The image below shows a Probabilistic Roadmap with the shortest path (in orange) from node 44 to node 2 : [44, 40, 20, 6, 47, 32, 22, 8, 2]. The obstacles are shown in red and the nodes in yellow.
@@ -34,6 +36,9 @@ It consists of two phases
     The positions are linked to the roadmap created and the best route is formed from start to end using a Dijkstra's shortest path query.
 
 # Rapidly-exploring Random Tree (RRT)
+
+Clone into directory and Run using `python3 rrt.py` for RRT with obstacles and `python3 rrt_without_obstacles.py` for RRT without obstacles.
+
 A Rapidly-Exploring Random Tree (RRT) is a fundamental path planning algorithm in robotics, first developed by Steven LaValle in 1998. 
 An RRT consists of a set of vertices, which represent configurations in some domain D and edges, which connect two vertices. The algorithm randomly builds a tree in such a way that, as the number of vertices n increases to ∞, the vertices are uniformly distributed across the domain D⊂Rn. 
 
